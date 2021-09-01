@@ -24,6 +24,7 @@ namespace Todo.Domain.Commands
         public void Validate()
         {
             AddNotifications(new Contract<Notification>()
+                .Requires()
                 .IsGreaterThan(Title, 3, "Title", "Title should have at least 3 chars")
                 .IsGreaterThan(User, 3, "User", "User should have at least 3 chars")
            );
